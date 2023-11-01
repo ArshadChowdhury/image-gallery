@@ -1,14 +1,14 @@
 import { memo } from "react";
 import { useDrag, useDrop } from "react-dnd";
 import { ItemTypes } from "./ItemTypes";
+
 const style = {
-  border: "1px dashed gray",
-  padding: "0.5rem 1rem",
-  marginBottom: ".5rem",
   backgroundColor: "white",
   cursor: "move",
 };
-export const Card = memo(function Card({ id, text, moveCard, findCard }) {
+
+// eslint-disable-next-line react/prop-types
+export const Card = memo(function Card({ id, moveCard, findCard, src }) {
   const originalIndex = findCard(id).index;
   const [{ isDragging }, drag] = useDrag(
     () => ({
@@ -42,7 +42,7 @@ export const Card = memo(function Card({ id, text, moveCard, findCard }) {
   const opacity = isDragging ? 0 : 1;
   return (
     <div ref={(node) => drag(drop(node))} style={{ ...style, opacity }}>
-      {text}
+      <img className="image" src={src} alt="" />
     </div>
   );
 });

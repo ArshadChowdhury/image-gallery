@@ -3,37 +3,40 @@ import { memo, useCallback, useState } from "react";
 import { useDrop } from "react-dnd";
 import { Card } from "./Card.jsx";
 import { ItemTypes } from "./ItemTypes.js";
+
 const style = {
-  width: 400,
+  width: 200,
+  display: "grid",
+  gridTemplateColumns: "1fr 1fr",
 };
 const ITEMS = [
   {
     id: 1,
-    text: "Write a cool JS library",
+    src: "/image-1.webp",
   },
   {
     id: 2,
-    text: "Make it generic enough",
+    src: "/image-2.webp",
   },
   {
     id: 3,
-    text: "Write README",
+    src: "/image-3.webp",
   },
   {
     id: 4,
-    text: "Create some examples",
+    src: "/image-4.webp",
   },
   {
     id: 5,
-    text: "Spam in Twitter and IRC to promote it",
+    src: "/image-5.webp",
   },
   {
     id: 6,
-    text: "???",
+    src: "/image-6.webp",
   },
   {
     id: 7,
-    text: "PROFIT",
+    src: "/image-7.webp",
   },
 ];
 const Container = memo(function Container() {
@@ -64,14 +67,14 @@ const Container = memo(function Container() {
   );
   const [, drop] = useDrop(() => ({ accept: ItemTypes.CARD }));
   return (
-    <div ref={drop} style={style}>
+    <div className="grid" ref={drop} style={style}>
       {cards.map((card) => (
         <Card
           key={card.id}
           id={`${card.id}`}
-          text={card.text}
           moveCard={moveCard}
           findCard={findCard}
+          src={card.src}
         />
       ))}
     </div>
