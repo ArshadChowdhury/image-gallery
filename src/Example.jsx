@@ -4,11 +4,6 @@ import { useDrop } from "react-dnd";
 import { Card } from "./Card.jsx";
 import { ItemTypes } from "./ItemTypes.js";
 
-const style = {
-  width: 200,
-  display: "grid",
-  gridTemplateColumns: "1fr 1fr",
-};
 const ITEMS = [
   {
     id: 1,
@@ -37,6 +32,22 @@ const ITEMS = [
   {
     id: 7,
     src: "/image-7.webp",
+  },
+  {
+    id: 8,
+    src: "/image-8.webp",
+  },
+  {
+    id: 9,
+    src: "/image-9.webp",
+  },
+  {
+    id: 10,
+    src: "/image-10.jpeg",
+  },
+  {
+    id: 11,
+    src: "/image-11.jpeg",
   },
 ];
 const Container = memo(function Container() {
@@ -67,17 +78,20 @@ const Container = memo(function Container() {
   );
   const [, drop] = useDrop(() => ({ accept: ItemTypes.CARD }));
   return (
-    <div className="grid" ref={drop} style={style}>
-      {cards.map((card) => (
-        <Card
-          key={card.id}
-          id={`${card.id}`}
-          moveCard={moveCard}
-          findCard={findCard}
-          src={card.src}
-        />
-      ))}
-    </div>
+    <section className="gallery-section">
+      <h1>Gallery</h1>
+      <div className="gallery-layout" ref={drop}>
+        {cards.map((card) => (
+          <Card
+            key={card.id}
+            id={`${card.id}`}
+            moveCard={moveCard}
+            findCard={findCard}
+            src={card.src}
+          />
+        ))}
+      </div>
+    </section>
   );
 });
 

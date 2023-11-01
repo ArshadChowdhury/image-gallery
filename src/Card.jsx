@@ -2,11 +2,6 @@ import { memo } from "react";
 import { useDrag, useDrop } from "react-dnd";
 import { ItemTypes } from "./ItemTypes";
 
-const style = {
-  backgroundColor: "white",
-  cursor: "move",
-};
-
 // eslint-disable-next-line react/prop-types
 export const Card = memo(function Card({ id, moveCard, findCard, src }) {
   const originalIndex = findCard(id).index;
@@ -41,8 +36,17 @@ export const Card = memo(function Card({ id, moveCard, findCard, src }) {
   );
   const opacity = isDragging ? 0 : 1;
   return (
-    <div ref={(node) => drag(drop(node))} style={{ ...style, opacity }}>
-      <img className="image" src={src} alt="" />
-    </div>
+    <>
+      {/* <div ref={(node) => drag(drop(node))} style={{ ...style, opacity }}>
+        <img className="image" src={src} alt="" />
+      </div> */}
+      <div
+        className="featured-image"
+        ref={(node) => drag(drop(node))}
+        style={{ opacity }}
+      >
+        <img className="image" src={src} alt="" />
+      </div>
+    </>
   );
 });
