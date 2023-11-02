@@ -1,5 +1,10 @@
 # Image Gallery app by Arshad
 
+## Here's a short overview of this Image Gallery App 
+
+![image](https://github.com/ArshadChowdhury/image-gallery/assets/86738490/b0130d79-f97e-4ed1-8497-ad343f8f651c)
+
+
 ### To run this project locally we have to clone it first by running `git clone https://github.com/ArshadChowdhury/image-gallery.git` in terminal.
 
 ### Then we'd have to install all the dependency by running `yarn` or `yarn install` or `npm install` in terminal.
