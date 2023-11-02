@@ -1,6 +1,6 @@
 # Image Gallery app by Arshad
 
-## Here's a short overview of this Image Gallery App 
+## Here's a overview of this Image Gallery App 
 
 ![image](https://github.com/ArshadChowdhury/image-gallery/assets/86738490/b0130d79-f97e-4ed1-8497-ad343f8f651c)
 
