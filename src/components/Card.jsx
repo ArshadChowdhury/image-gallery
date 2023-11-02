@@ -42,6 +42,7 @@ const Card = memo(function Card({
     }),
     [findCard, moveCard]
   );
+
   const opacity = isDragging ? 0 : 1;
 
   function handleCheckBox(event) {

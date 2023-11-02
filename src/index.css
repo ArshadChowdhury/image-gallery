@@ -18,22 +18,6 @@ body {
   border-radius: 10px;
 }
 
-/* .image::before,
-.image::after {
-  content: "";
-  background-color: rgba(0, 0, 0, 0.5);
-  transition: all 0.3s ease;
-  z-index: 1;
-  opacity: 0;
-  transform: scaleY(2);
-}
-
-.image:hover::before,
-.image:hover::after {
-  transform: scale(1);
-  opacity: 1;
-} */
-
 .gallery-section {
   background-color: white;
   max-width: 70vw;
@@ -197,12 +181,10 @@ body {
   .gallery-layout {
     grid-template-columns: repeat(2, 1fr);
   }
-
   .heading {
     flex-direction: column;
     gap: 20px;
   }
-
   .empty-state {
     font-size: 0.7rem;
   }

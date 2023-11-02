@@ -5,6 +5,7 @@ import { PhotoIcon } from "@heroicons/react/24/outline";
 import update from "immutability-helper";
 import Card from "./Card.jsx";
 import { ItemTypes } from "./ItemTypes.js";
+import { formatByNumber } from "../utilsKit.js";
 
 const gallery_images = [
   {
@@ -52,13 +53,14 @@ const gallery_images = [
     src: "/image-11.jpeg",
   },
 ];
+
 const Gallery = memo(function Container() {
   const [cards, setCards] = useState(gallery_images);
   const [selectedImage, setSelectedImage] = useState(null);
   const [deleteCard, setDeleteCard] = useState([]);
   const findCard = useCallback(
     (id) => {
-      const card = cards.filter((c) => `${c.id}` === id)[0];
+      const card = cards.filter((card) => `${card.id}` === id)[0];
       return {
         card,
         index: cards.indexOf(card),
@@ -90,9 +92,10 @@ const Gallery = memo(function Container() {
   function handleDelete() {
     if (
       window.confirm(
-        `Delete ${deleteCard.length} ${
-          deleteCard.length === 1 ? "Item" : "Items"
-        }?`
+        `Delete ${deleteCard.length} ${formatByNumber(
+          deleteCard.length,
+          "Item"
+        )}?`
       )
     ) {
       deleteCard.forEach((id) => {
@@ -114,16 +117,16 @@ const Gallery = memo(function Container() {
           <>
             <h1>
               {" "}
-              {deleteCard.length} {deleteCard.length === 1 ? "Item" : "Items"}{" "}
+              {deleteCard.length} {formatByNumber(deleteCard.length, "Item")}{" "}
               Selected
             </h1>
             <button onClick={handleDelete} className="delete-button">
               Delete {deleteCard.length}{" "}
-              {deleteCard.length === 1 ? "File" : "Files"}
+              {formatByNumber(deleteCard.length, "File")}
             </button>
           </>
         ) : (
-          <h1> Gallery</h1>
+          <h1>Gallery</h1>
         )}
       </div>
       {cards.length > 0 ? (
