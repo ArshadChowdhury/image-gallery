@@ -1,8 +1,7 @@
-# React + Vite
+# Image Gallery app by Arshad
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### To run this project locally we have to clone it first by running `git clone https://github.com/ArshadChowdhury/image-gallery.git` in terminal.
 
-Currently, two official plugins are available:
+### Then we'd have to install all the dependency by running `yarn` or `yarn install` or `npm install` in terminal.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Then after all the dependencies are downloaded we can run `npm run dev` or `yarn dev` and we should have the project running at `http://localhost:5173/` by default by Vite.
