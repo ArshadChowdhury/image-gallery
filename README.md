@@ -1,4 +1,4 @@
-# Image Gallery app by Arshad
+# Image Gallery app
 
 ## Live link of this project - https://image-gallery-by-arshad.netlify.app/
 
